@@ -8,6 +8,7 @@ public class HitScript : MonoBehaviour
     public ParticleSystem blood;
     public GameObject player;
     public PlayerMovementAdvanced pam;
+    public ShootScript shoot;
 
     private bool fuck = false;
     // Start is called before the first frame update
@@ -20,6 +21,12 @@ public class HitScript : MonoBehaviour
     void Update()
     {
         if (fuck) pam.state = PlayerMovementAdvanced.MovementState.freeze;
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance < 15)
+        {
+            shoot.ShootOff();
+        }
+
     }
 
     private void LateUpdate()

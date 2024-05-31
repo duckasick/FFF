@@ -238,7 +238,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
         // Mode - Walking
         else if (grounded)
         {
-            print("dog");
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
         }
