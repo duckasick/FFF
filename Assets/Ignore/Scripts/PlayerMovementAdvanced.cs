@@ -18,6 +18,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public float airMinSpeed;
     public float swingSpeed;
 
+    private float coyoteTimer;
+    public float coyoteTimerTime;
+
     public float speedIncreaseMultiplier;
     public float slopeIncreaseMultiplier;
 
@@ -114,6 +117,16 @@ public class PlayerMovementAdvanced : MonoBehaviour
         StateHandler();
         TextStuff();
 
+        if (!grounded)
+        {
+            coyoteTimer -= Time.deltaTime;
+        }
+        else if (grounded)
+        {
+            coyoteTimer = coyoteTimerTime;
+        }
+        print(coyoteTimer);
+
         // handle drag
         if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)
             rb.drag = groundDrag;
@@ -132,7 +145,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && (grounded || coyoteTimer > 0))
         {
             readyToJump = false;
 

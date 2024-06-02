@@ -915,9 +915,24 @@ PrefabInstance:
       objectReference: {fileID: 165369163638469715}
     - target: {fileID: 6968441453231346279, guid: 5f8ecc8c435492f4384caab857f1ed90,
         type: 3}
+      propertyPath: walkSpeed
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968441453231346279, guid: 5f8ecc8c435492f4384caab857f1ed90,
+        type: 3}
       propertyPath: text_speed
       value: 
       objectReference: {fileID: 4901845864815607704}
+    - target: {fileID: 6968441453231346279, guid: 5f8ecc8c435492f4384caab857f1ed90,
+        type: 3}
+      propertyPath: wallrunSpeed
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968441453231346279, guid: 5f8ecc8c435492f4384caab857f1ed90,
+        type: 3}
+      propertyPath: coyoteTimerTime
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -12,6 +12,7 @@ public class GunScript : MonoBehaviour
     public GameObject beam;
     public bool killed;
     public TextMeshProUGUI killtext;
+    public PlayerKillScript PKS;
 
 
     public bool sex = true;
@@ -40,11 +41,7 @@ public class GunScript : MonoBehaviour
 
     public void Kill()
     {
-        print("ksk");
-        killed = true;
-        killtext.text = "Press F to restart";
-        Time.timeScale = 0f;
-
+        PKS.Kill();
     }
 
     private void OnTriggerEnter(Collider other)
