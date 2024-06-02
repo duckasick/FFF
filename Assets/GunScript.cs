@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GunScript : MonoBehaviour
 {
     public float starttime;
     private float timer;
+    public float offset;
     public GameObject beam;
-    private bool sex = true;
+    public bool killed;
+    public TextMeshProUGUI killtext;
+
+
+    public bool sex = true;
     // Start is called before the first frame update
     void Start()
     {
-        timer = starttime;
+        timer = starttime + offset;
     }
 
     // Update is called once per frame
@@ -24,6 +31,29 @@ public class GunScript : MonoBehaviour
             timer = starttime;
         }
         beam.SetActive(sex);
+        if (Input.GetKey(KeyCode.F) && killed == true)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+    }
+
+    public void Kill()
+    {
+        print("ksk");
+        killed = true;
+        killtext.text = "Press F to restart";
+        Time.timeScale = 0f;
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Kill();
+            print("turret");
+        }
+    }
+
 }

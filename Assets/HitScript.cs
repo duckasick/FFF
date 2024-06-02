@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HitScript : MonoBehaviour
@@ -9,6 +10,9 @@ public class HitScript : MonoBehaviour
     public GameObject player;
     public PlayerMovementAdvanced pam;
     public ShootScript shoot;
+    public TextMeshProUGUI wintext;
+
+    public float shootoff = 15;
 
     private bool fuck = false;
     // Start is called before the first frame update
@@ -22,15 +26,22 @@ public class HitScript : MonoBehaviour
     {
         if (fuck) pam.state = PlayerMovementAdvanced.MovementState.freeze;
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 15)
+        if (distance < shootoff)
         {
             shoot.ShootOff();
         }
+
+        if (wintext.text.Length > 5 && Input.GetKeyDown(KeyCode.Space))
+        {
+            print("next level");
+        }
+        if (!fuck) { blood.Stop(); }
 
     }
 
     private void LateUpdate()
     {
+        if (!fuck) { blood.Stop(); }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,6 +49,7 @@ public class HitScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             print("krak");
+            wintext.text = "Press Space to continue";
             Destroy(target);
             blood.Play();
             fuck = true;

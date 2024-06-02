@@ -104,6 +104,8 @@ public class WallRunningAdvanced : MonoBehaviour
 
             // wall jump
             if (Input.GetKeyDown(jumpKey)) WallJump();
+            else if (wallLeft && horizontalInput > 0) WallJump();
+            else if (wallRight && horizontalInput < 0) WallJump();
         }
 
         // State 2 - Exiting
