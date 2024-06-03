@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RainbowBridge
+  m_Name: RainbowBridgeWhite
   m_Shader: {fileID: -6465566751694194690, guid: 12f029776903a4848a3e8554e7ffd152,
     type: 3}
   m_Parent: {fileID: 0}
@@ -111,11 +111,11 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoiseSize: 54.02
-    - _NoiseSpeed: 0.13
+    - _NoiseSpeed: 0.64
     - _NoiseThreshold: 0.1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Saturation: 1
+    - _Saturation: 0
     - _Sine: 0
     - _SineNoise: 0
     - _SmoothnessTextureChannel: 0
@@ -138,12 +138,12 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DistortionDirection: {r: 10, g: 10, b: 0, a: 0}
     - _DistortionDirection2: {r: 1, g: 1, b: 0, a: 0}
-    - _DistortionSpeed: {r: -0.1, g: 0.1, b: 0, a: 0}
-    - _DistortionSpeed2: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _DistortionSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortionSpeed2: {r: 0, g: 0, b: 0, a: 0}
     - _DistortionTiling: {r: 0.1, g: 30, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NoiseDirection: {r: 1, g: 0, b: 0, a: 0}
-    - _NoiseTiling: {r: 1.54, g: 0, b: 0, a: 0}
+    - _NoiseDirection: {r: 1, g: 1, b: 0, a: 0}
+    - _NoiseTiling: {r: 50, g: 1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 0, b: 0, a: 0}
     - _TilingTrue: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

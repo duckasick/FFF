@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RainbowBridge
-  m_Shader: {fileID: -6465566751694194690, guid: 12f029776903a4848a3e8554e7ffd152,
+  m_Name: RainbowBridgeBorder
+  m_Shader: {fileID: -6465566751694194690, guid: ae817233bc668da4fa62f2a4436ae3ee,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -79,18 +79,18 @@ Material:
     - _AlphaSpeed: 0.1
     - _AlphaThreshold: 0.1
     - _BUILTIN_AlphaClip: 1
-    - _BUILTIN_Blend: 0
+    - _BUILTIN_Blend: 3
     - _BUILTIN_CullMode: 2
-    - _BUILTIN_DstBlend: 10
+    - _BUILTIN_DstBlend: 0
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _BUILTIN_SrcBlend: 5
+    - _BUILTIN_SrcBlend: 2
     - _BUILTIN_Surface: 1
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
     - _BorderBrightness: 1
-    - _Brightness: 0.9
+    - _Brightness: 4.84
     - _BumpScale: 1
     - _ColorMask: 15
     - _Cosine: 0
@@ -111,11 +111,11 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoiseSize: 54.02
-    - _NoiseSpeed: 0.13
+    - _NoiseSpeed: 1.61
     - _NoiseThreshold: 0.1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Saturation: 1
+    - _Saturation: 0.13
     - _Sine: 0
     - _SineNoise: 0
     - _SmoothnessTextureChannel: 0
@@ -134,15 +134,14 @@ Material:
     m_Colors:
     - _AlphaTiling: {r: -1, g: 0, b: 0, a: 0}
     - _AlphaTiling_1: {r: 1, g: 0, b: 0, a: 0}
-    - _BorderThickness: {r: 0.15, g: 0, b: 0, a: 0}
+    - _BorderThickness: {r: 0.09, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DistortionDirection: {r: 10, g: 10, b: 0, a: 0}
-    - _DistortionDirection2: {r: 1, g: 1, b: 0, a: 0}
-    - _DistortionSpeed: {r: -0.1, g: 0.1, b: 0, a: 0}
-    - _DistortionSpeed2: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _DistortionTiling: {r: 0.1, g: 30, b: 0, a: 0}
+    - _DistortionDirection: {r: 10, g: 20, b: 0, a: 0}
+    - _DistortionDirection2: {r: 3, g: 20, b: 0, a: 0}
+    - _DistortionSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _DistortionSpeed2: {r: -0.1, g: 0.1, b: 0, a: 0}
+    - _DistortionTiling: {r: 0.2, g: 30, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NoiseDirection: {r: 1, g: 0, b: 0, a: 0}
     - _NoiseTiling: {r: 1.54, g: 0, b: 0, a: 0}
     - _Tiling: {r: 1, g: 0, b: 0, a: 0}
     - _TilingTrue: {r: 1, g: 0, b: 0, a: 0}
