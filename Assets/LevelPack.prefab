@@ -986,6 +986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6968441453231346279, guid: 5f8ecc8c435492f4384caab857f1ed90,
         type: 3}
+      propertyPath: jumpForce
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968441453231346279, guid: 5f8ecc8c435492f4384caab857f1ed90,
+        type: 3}
       propertyPath: text_mode
       value: 
       objectReference: {fileID: 165369163638469715}
