@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7302272, g: 0.7889773, b: 0.84986025, a: 1}
+  m_IndirectSpecularColor: {r: 0.73024267, g: 0.7889841, b: 0.8498617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -289,6 +289,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &134633439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5326661351868533290, guid: daf53dbcd9711a74bb5d7966da95180f,
+    type: 3}
+  m_PrefabInstance: {fileID: 297375619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aebc272f7ce7a74b9a67fa47adb6cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202082045
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +752,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 633930493}
+    - target: {fileID: 4921922963372107707, guid: daf53dbcd9711a74bb5d7966da95180f,
+        type: 3}
+      propertyPath: level
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 6338080708496521706, guid: daf53dbcd9711a74bb5d7966da95180f,
         type: 3}
       propertyPath: m_Mesh
@@ -4001,6 +4018,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710485341899271013, guid: db6652aa209f538459057843ca411292,
+        type: 3}
+      propertyPath: PKS
+      value: 
+      objectReference: {fileID: 134633439}
     - target: {fileID: 710485341899271013, guid: db6652aa209f538459057843ca411292,
         type: 3}
       propertyPath: sex

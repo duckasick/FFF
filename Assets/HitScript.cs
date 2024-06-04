@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HitScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class HitScript : MonoBehaviour
     public PlayerMovementAdvanced pam;
     public ShootScript shoot;
     public TextMeshProUGUI wintext;
+
+    public string level;
 
     public float shootoff = 15;
 
@@ -33,7 +36,7 @@ public class HitScript : MonoBehaviour
 
         if (wintext.text.Length > 5 && Input.GetKeyDown(KeyCode.Space))
         {
-            print("next level");
+            SceneManager.LoadScene(level);
         }
         if (!fuck) { blood.Stop(); }
 

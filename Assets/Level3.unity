@@ -3752,6 +3752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921922963372107707, guid: daf53dbcd9711a74bb5d7966da95180f,
         type: 3}
+      propertyPath: level
+      value: Level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921922963372107707, guid: daf53dbcd9711a74bb5d7966da95180f,
+        type: 3}
       propertyPath: shootoff
       value: 20
       objectReference: {fileID: 0}
@@ -6629,6 +6634,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5398708131526872714, guid: f88b82927479510479894881542414ba,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398708131526872714, guid: f88b82927479510479894881542414ba,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: fab6cf1edafb1a94fa8e4ae22fe46da4, type: 2}
     - target: {fileID: 6475083725826139026, guid: f88b82927479510479894881542414ba,
         type: 3}
       propertyPath: m_Mesh

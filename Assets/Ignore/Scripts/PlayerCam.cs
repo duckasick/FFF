@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class PlayerCam : MonoBehaviour
 {
+    public GotoMainMenu gmm;
     public float sensX;
     public float sensY;
     public float multiplier;
@@ -17,7 +18,7 @@ public class PlayerCam : MonoBehaviour
 
     [Header("Fov")]
     public bool useFluentFov;
-    public PlayerMovementDashing pm;
+    public PlayerMovementAdvanced pm;
     public Rigidbody rb;
     public Camera cam;
     public float minMovementSpeed;
@@ -26,10 +27,23 @@ public class PlayerCam : MonoBehaviour
     public float maxFov;
     private bool fuck;
 
+    private GotoMainMenu go;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+
+
+        go = FindObjectOfType<GotoMainMenu>();
+
+        if (go)
+        {
+            multiplier = go.yourmom;
+            print(multiplier + "    HAHAHAHHAHHAHAH");
+
+        }
     }
 
     private void Update()
