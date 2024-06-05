@@ -139,8 +139,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
               kak = false;
 
         }
-   
-        print(coyoteTimer);
 
         // handle drag
         if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)

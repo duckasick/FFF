@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,10 @@ public class HitScript : MonoBehaviour
 
     public float shootoff = 15;
 
+    private GotoMainMenu music;
+
+    private bool shit = false;
+
     private bool fuck = false;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +42,8 @@ public class HitScript : MonoBehaviour
 
         if (wintext.text.Length > 5 && Input.GetKeyDown(KeyCode.Space))
         {
+            music = FindObjectOfType<GotoMainMenu>();
+            music.Pause();
             SceneManager.LoadScene(level);
         }
         if (!fuck) { blood.Stop(); }
@@ -56,7 +63,11 @@ public class HitScript : MonoBehaviour
             wintext.text = "Press Space to continue";
             Destroy(target);
             blood.Play();
-            death.Play();
+            if (shit == false)
+            {
+                death.Play();
+                shit = true;
+            }
             fuck = true;
             pam.rb.isKinematic = true;
             player.transform.LookAt(this.transform.position);

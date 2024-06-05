@@ -13,6 +13,7 @@ public class MainMenuScript : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 1f;
 
     }
@@ -21,6 +22,7 @@ public class MainMenuScript : MonoBehaviour
     void Update()
     {
         camera.transform.rotation *= Quaternion.Euler(0, speed, 0);
+
     }
 
     public void Play()
