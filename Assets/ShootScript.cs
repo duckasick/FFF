@@ -10,6 +10,7 @@ public class ShootScript : MonoBehaviour
     public float speed;
     public float rof;
     private float timer;
+    public AudioSource au;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class ShootScript : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, barrel.position, barrel.rotation);
             bullet.GetComponent<Rigidbody>().velocity = barrel.forward * speed;
             timer = rof;
+            au.Play();
         }
     }
 

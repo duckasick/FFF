@@ -12,6 +12,7 @@ public class HitScript : MonoBehaviour
     public PlayerMovementAdvanced pam;
     public ShootScript shoot;
     public TextMeshProUGUI wintext;
+    public AudioSource death;
 
     public string level;
 
@@ -55,6 +56,7 @@ public class HitScript : MonoBehaviour
             wintext.text = "Press Space to continue";
             Destroy(target);
             blood.Play();
+            death.Play();
             fuck = true;
             pam.rb.isKinematic = true;
             player.transform.LookAt(this.transform.position);

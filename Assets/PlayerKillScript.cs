@@ -12,6 +12,8 @@ public class PlayerKillScript : MonoBehaviour
     public ParticleSystem blood;
     private bool killed;
     public float zero = 0;
+    public bool killable;
+    public AudioSource dogdeath;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,16 @@ public class PlayerKillScript : MonoBehaviour
 
     public void Kill()
     {
-        print("fuck");
-        text.text = "Press F to restart";
-        killed = true;
-        Time.timeScale = zero;
-        image.SetActive(true);
+        if (killable)
+        {
+            dogdeath.Play();
+            print("fuck");
+            text.text = "Press F to restart";
+            killed = true;
+            Time.timeScale = zero;
+            image.SetActive(true);
+        }
+        
 
     }
 }

@@ -7,11 +7,14 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject camera;
     public float speed;
+    public AudioSource hover;
+    public AudioSource click;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 1f;
+
     }
 
     // Update is called once per frame
@@ -47,5 +50,14 @@ public class MainMenuScript : MonoBehaviour
     public void Level4()
     {
         SceneManager.LoadScene("Level4");
+    }
+
+    public void Hover()
+    {
+        hover.Play();
+    }
+    public void Click()
+    {
+        click.Play();
     }
 }

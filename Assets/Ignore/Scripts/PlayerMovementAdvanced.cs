@@ -65,6 +65,11 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     public Rigidbody rb;
 
+
+    public AudioSource run;
+    public AudioSource jump;
+
+
     public MovementState state;
     public enum MovementState
     {
@@ -96,6 +101,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public TextMeshProUGUI text_speed;
     public TextMeshProUGUI text_mode;
 
+    bool kak;
+
     private void Start()
     {
         climbingScriptDone = GetComponent<ClimbingDone>();
@@ -117,14 +124,22 @@ public class PlayerMovementAdvanced : MonoBehaviour
         StateHandler();
         TextStuff();
 
-        if (!grounded)
+        if (!grounded && !wallrunning)
         {
             coyoteTimer -= Time.deltaTime;
+
         }
-        else if (grounded)
+        else if (grounded || wallrunning)
         {
             coyoteTimer = coyoteTimerTime;
         }
+        if (!grounded && !wallrunning)
+        {
+             run.Stop();
+              kak = false;
+
+        }
+   
         print(coyoteTimer);
 
         // handle drag
@@ -150,9 +165,23 @@ public class PlayerMovementAdvanced : MonoBehaviour
             readyToJump = false;
 
             Jump();
+            jump.Play();
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+
+        if ((horizontalInput != 0 || verticalInput != 0) && !run.isPlaying && kak == false)
+        {
+            run.Play();
+            kak = true;
+        }
+
+        if (horizontalInput == 0 && verticalInput == 0)
+        {
+            run.Stop();
+            kak = false;
+        }
+
 
         // start crouch
         if (Input.GetKeyDown(crouchKey) && horizontalInput == 0 && verticalInput == 0)
