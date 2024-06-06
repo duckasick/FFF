@@ -8,7 +8,7 @@ public class DashingDone : MonoBehaviour
     public Transform orientation;
     public Transform playerCam;
     private Rigidbody rb;
-    private PlayerMovementDashingDone pm;
+    private PlayerMovementAdvanced pm;
 
     [Header("Dashing")]
     public float dashForce = 70f;
@@ -39,12 +39,12 @@ public class DashingDone : MonoBehaviour
             playerCam = Camera.main.transform;
 
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovementDashingDone>();
+        pm = GetComponent<PlayerMovementAdvanced>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(dashKey))
+        if (Input.GetMouseButtonDown(0) && !pm.grounded)
             Dash();
 
         if (dashCdTimer > 0)
@@ -61,7 +61,6 @@ public class DashingDone : MonoBehaviour
 
         // this will cause the PlayerMovement script to change to MovementMode.dashing
         pm.dashing = true;
-        pm.maxYSpeed = maxDashYSpeed;
 
         Transform forwardT;
 
@@ -107,7 +106,7 @@ public class DashingDone : MonoBehaviour
     private void ResetDash()
     {
         pm.dashing = false;
-        pm.maxYSpeed = 0;
+        print("kk");
 
         cam.DoFov(85f);
 

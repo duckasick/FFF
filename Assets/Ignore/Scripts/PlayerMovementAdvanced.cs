@@ -7,9 +7,10 @@ public class PlayerMovementAdvanced : MonoBehaviour
 {
     [Header("Movement")]
     private float moveSpeed;
-    private float desiredMoveSpeed;
+    public float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
     public float walkSpeed;
+    public float dashSpeed;
     public float sprintSpeed;
     public float slideSpeed;
     public float wallrunSpeed;
@@ -83,7 +84,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         crouching,
         sliding,
         air,
-        swinging
+        swinging,
+        dashing
     }
 
     public bool sliding;
@@ -92,6 +94,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public bool climbing;
     public bool vaulting;
     public bool swinging;
+    public bool dashing;
 
     public bool freeze;
     public bool unlimited;
@@ -102,6 +105,14 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public TextMeshProUGUI text_mode;
 
     bool kak;
+
+    public void cock()
+    {
+        dashSpeed = 19;
+        state = MovementState.walking;
+        desiredMoveSpeed = walkSpeed;
+   
+    }
 
     private void Start()
     {
@@ -199,6 +210,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         }
     }
 
+    //bool 
+
     bool keepMomentum;
     private void StateHandler()
     {
@@ -208,6 +221,13 @@ public class PlayerMovementAdvanced : MonoBehaviour
             state = MovementState.freeze;
             rb.velocity = Vector3.zero;
             desiredMoveSpeed = 0f;
+        }
+
+        // Mode - Dashing
+        else if (dashing)
+        {
+            state = MovementState.dashing;
+            moveSpeed = dashSpeed;
         }
 
         //
@@ -335,8 +355,11 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
             yield return null;
         }
-
-        moveSpeed = desiredMoveSpeed;
+        if (grounded)
+        {
+            moveSpeed = walkSpeed;
+        }
+        else { moveSpeed = desiredMoveSpeed; }
     }
 
     private void MovePlayer()

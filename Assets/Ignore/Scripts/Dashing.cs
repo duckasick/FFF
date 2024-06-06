@@ -8,7 +8,7 @@ public class Dashing : MonoBehaviour
     public Transform orientation;
     public Transform playerCam;
     private Rigidbody rb;
-    private PlayerMovementDashing pm;
+    public PlayerMovementAdvanced pm;
 
     [Header("Dashing")]
     public float dashForce;
@@ -31,18 +31,29 @@ public class Dashing : MonoBehaviour
     private float dashCdTimer;
 
     [Header("Input")]
-    public KeyCode dashKey = KeyCode.E;
+    public bool dashable = false;
+    public float dashcount = 0; 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovementDashing>();
+
+        if (Input.GetKeyDown(KeyCode.W)) { 
+            dashable = true;
+        } 
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(dashKey))
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            dashable = true;
+        }
+        if (Input.GetMouseButtonDown(0) && dashable == true && dashcount == 0)
+        {
             Dash();
+            dashcount++;
+        }
 
         if (dashCdTimer > 0)
             dashCdTimer -= Time.deltaTime;
@@ -54,7 +65,6 @@ public class Dashing : MonoBehaviour
         else dashCdTimer = dashCd;
 
         pm.dashing = true;
-        pm.maxYSpeed = maxDashYSpeed;
 
         cam.DoFov(dashFov);
 
@@ -90,9 +100,15 @@ public class Dashing : MonoBehaviour
     private void ResetDash()
     {
         pm.dashing = false;
-        pm.maxYSpeed = 0;
+        pm.dashSpeed = pm.dashSpeed / 2;
 
-        cam.DoFov(85f);
+        cam.DoFov(90f);
+
+        print("garbo");
+
+        pm.cock();
+        pm.desiredMoveSpeed = pm.walkSpeed;
+
 
         if (disableGravity)
             rb.useGravity = true;

@@ -43,7 +43,10 @@ public class HitScript : MonoBehaviour
         if (wintext.text.Length > 5 && Input.GetKeyDown(KeyCode.Space))
         {
             music = FindObjectOfType<GotoMainMenu>();
-            music.Pause();
+            if (music != null)
+            {
+                music.Pause();
+            }
             SceneManager.LoadScene(level);
         }
         if (!fuck) { blood.Stop(); }
